@@ -15,6 +15,6 @@
         Rok: <strong>{{obiekt.rok}}</strong>
     </div>
     <div>
-        Akcje: <button (click)="onUsunClick()">Usuń</button>, <a routerLink="form">Edycja</a>, <a routerLink="/">Powrót</a>
+        Akcje: <button (click)="onUsunClick()">Usuń</button>, <a [routerLink]="['/formularz', obiekt.id]">Edycja</a>, <a routerLink="/">Powrót</a>
     </div>
 </div>

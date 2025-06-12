@@ -6,6 +6,7 @@ import { UslugaBody } from '../../models/usluga-body';
 
 @Component({
   selector: 'app-formularz',
+  standalone: true,
   imports: [FormsModule],
   templateUrl: './formularz.component.html',
   styleUrl: './formularz.component.css'

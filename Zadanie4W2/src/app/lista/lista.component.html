@@ -1,26 +1,35 @@
 <div>
-    <a routerLink="form">Dodaj</a>
-</div>
-<hr />
-<table border="1">
+    <a routerLink="formularz">Dodaj</a>
+  </div>
+  
+  <div style="margin: 1em 0;">
+    <input type="text" [(ngModel)]="fraza" placeholder="Szukaj po nazwie">
+    <button (click)="filtruj()">Szukaj</button>
+    <button (click)="odswiez()">Wyczyść</button>
+  </div>
+  
+  <hr />
+  
+  <table border="1">
     <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nazwa</th>
-            <th>Wykonawca</th>
-            <th>Rodzaj</th>
-            <th>Rok</th>
-            <th>Przejdź</th>
-        </tr>
+      <tr>
+        <th>ID</th>
+        <th>Nazwa</th>
+        <th>Wykonawca</th>
+        <th>Rodzaj</th>
+        <th>Rok</th>
+        <th>Przejdź</th>
+      </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let obiekt of (dane$ | async)">
-            <td>{{obiekt.id}}</td>
-            <td>{{obiekt.nazwa}}</td>
-            <td>{{obiekt.wykonawca}}</td>
-            <td>{{obiekt.rodzaj}}</td>
-            <td>{{obiekt.rok}}</td>
-            <td><a [routerLink]="obiekt.id + ''">Link</a></td>
-        </tr>
+      <tr *ngFor="let obiekt of (dane$ | async)">
+        <td>{{ obiekt.id }}</td>
+        <td>{{ obiekt.nazwa }}</td>
+        <td>{{ obiekt.wykonawca }}</td>
+        <td>{{ obiekt.rodzaj }}</td>
+        <td>{{ obiekt.rok }}</td>
+        <td><a [routerLink]="['/szczegoly', obiekt.id]">Link</a>
+      </tr>
     </tbody>
-</table>
+  </table>
+  
